@@ -2,29 +2,33 @@
 <html lang="pt-BR"><head><meta charset="utf-8"><title>Gestão de Manutenção Predial</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
-:root{--bg:#f3f5f9;--card:#fff;--tx:#1f2937;--mu:#6b7280;--bd:#e2e6ee;--pr:#1d4ed8;--sb:#0f2a5c;--ok:#16a34a;--wn:#d97706;--er:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1420;--card:#172033;--tx:#e5e9f2;--mu:#9aa5b8;--bd:#27324a;--pr:#5b8def;--sb:#0a1428}}
-*{box-sizing:border-box}html,body{margin:0;font:14px system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+:root{--bg:#f5f5f2;--card:#fff;--tx:#222;--mu:#6d6d68;--bd:#d9d9d3;--pr:#1f4e8c;--sb:#1e2833;--ok:#2f7d4f;--wn:#b36b00;--er:#b3322a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15181c;--card:#1d2127;--tx:#e6e6e2;--mu:#9a9a94;--bd:#30353c;--pr:#6c9ad8;--sb:#101418}}
+*{box-sizing:border-box}html,body{margin:0;font:14px/1.45 "Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--tx)}
 #app{display:flex;min-height:100vh}
-nav{width:220px;background:var(--sb);color:#fff;padding:16px 10px;flex-shrink:0;position:sticky;top:0;height:100vh}
-nav h1{font-size:15px;margin:4px 8px 16px}nav button{display:block;width:100%;text-align:left;background:none;border:0;color:#cdd8f0;padding:10px;border-radius:8px;font-size:14px;cursor:pointer}
-nav button.on,nav button:hover{background:rgba(255,255,255,.14);color:#fff}
-main{flex:1;padding:20px;min-width:0}h2{margin:0 0 16px}
-.g{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:16px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.c{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px}
-.k b{display:block;font-size:24px;margin-top:4px}.k span,.mu{color:var(--mu);font-size:12px}
-.c h3{margin:0 0 10px;font-size:13px}
-.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}th{font-size:12px;color:var(--mu)}tr.cl{cursor:pointer}tr.cl:hover{background:var(--bg)}
-input,select,textarea{width:100%;padding:8px;border:1px solid var(--bd);border-radius:6px;background:var(--card);color:var(--tx);font:inherit}
-label{display:block;font-size:12px;color:var(--mu);margin-bottom:10px}label input,label select,label textarea{margin-top:4px}
-.f{display:grid;gap:0 12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-button.b{background:var(--pr);color:#fff;border:0;padding:9px 14px;border-radius:7px;cursor:pointer;font:inherit}button.s{background:var(--bd);color:var(--tx)}button.d{background:var(--er)}
-.t{padding:2px 8px;border-radius:99px;font-size:12px;color:#fff;display:inline-block}.ok{background:var(--ok)}.wn{background:var(--wn)}.er{background:var(--er)}.gr{background:#64748b}.bl{background:var(--pr)}
-.bar{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:12px}.bar i{display:block;height:14px;background:var(--pr);border-radius:3px;min-width:2px}.bar em{width:110px;font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ph{display:flex;gap:8px;flex-wrap:wrap}.ph img{width:96px;height:72px;object-fit:cover;border-radius:6px;border:1px solid var(--bd)}
-.er2{color:var(--er)}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
-@media(max-width:760px){#app{flex-direction:column}nav{width:100%;height:auto;position:static;display:flex;flex-wrap:wrap;gap:4px}nav h1{width:100%}nav button{width:auto;padding:8px}}
+nav{width:210px;background:var(--sb);color:#d4d9df;padding:0;flex-shrink:0;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}nav:empty{display:none}
+nav h1{font-size:15px;font-weight:600;margin:0;padding:18px 16px;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+nav .who{padding:10px 16px;font-size:12px;color:#9aa4af;border-bottom:1px solid rgba(255,255,255,.08)}nav .who b{display:block;color:#e8ebee;font-weight:600;font-size:13px}nav .who a{cursor:pointer;text-decoration:underline}
+nav button{display:block;width:100%;text-align:left;background:none;border:0;border-left:3px solid transparent;color:#c3cad2;padding:10px 16px;font:inherit;cursor:pointer}
+nav button:hover{background:rgba(255,255,255,.05)}nav button.on{border-left-color:#6fa0e0;background:rgba(255,255,255,.07);color:#fff}
+main{flex:1;padding:22px 26px;min-width:0}h2{margin:0 0 16px;font-size:19px;font-weight:600}
+.g{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:3px;padding:14px;margin-bottom:12px}.g .c{margin-bottom:0}
+.k span{font-size:12px;color:var(--mu)}.k b{display:block;font-size:22px;font-weight:600;margin-top:2px;font-variant-numeric:tabular-nums}
+.mu{color:var(--mu);font-size:12px}.c h3{margin:0 0 10px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--mu)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{padding:7px 10px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}th{font-size:11px;font-weight:600;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}tr.cl{cursor:pointer}tr.cl:hover{background:var(--bg)}td{font-variant-numeric:tabular-nums}
+input,select,textarea{width:100%;padding:7px 9px;border:1px solid var(--bd);border-radius:3px;background:var(--card);color:var(--tx);font:inherit}input:focus,select:focus,textarea:focus{outline:2px solid var(--pr);outline-offset:-1px;border-color:var(--pr)}
+label{display:block;font-size:12px;color:var(--mu);margin-bottom:10px}label input,label select,label textarea{margin-top:3px}
+.f{display:grid;gap:0 12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+button.b{background:var(--pr);color:#fff;border:0;padding:8px 14px;border-radius:3px;cursor:pointer;font:inherit}button.b:hover{filter:brightness(1.1)}button.s{background:transparent;color:var(--tx);border:1px solid var(--bd)}button.d{background:var(--er)}
+.t{padding:1px 7px;border-radius:2px;font-size:12px;color:#fff;display:inline-block}.ok{background:var(--ok)}.wn{background:var(--wn)}.er{background:var(--er)}.gr{background:#737373}.bl{background:var(--pr)}
+.bar{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:12px}.bar i{display:block;height:12px;background:var(--pr);opacity:.85;min-width:2px}.bar em{width:110px;font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ph{display:flex;gap:8px;flex-wrap:wrap}.ph img{width:96px;height:72px;object-fit:cover;border:1px solid var(--bd)}
+.er2{color:var(--er);min-height:1.2em;font-size:13px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.login{display:flex;min-height:calc(100vh - 44px);margin:-22px -26px}.login aside{flex:1;background:var(--sb);color:#fff;padding:56px 48px;display:flex;flex-direction:column;justify-content:flex-end}
+.login aside h1{font-size:26px;margin:0 0 10px;font-weight:600}.login aside p{margin:0;max-width:340px;color:#aeb7c1;font-size:15px}
+.lf{flex:1;max-width:460px;padding:56px 44px;align-self:center}.lf h2{margin-bottom:20px}.lk{color:var(--pr);cursor:pointer;text-decoration:underline}
+@media(max-width:760px){#app{flex-direction:column}nav{width:100%;height:auto;position:static;flex-direction:row;flex-wrap:wrap}nav h1,nav .who{width:100%}nav button{width:auto;border-left:0;padding:9px 12px}main{padding:14px}.login{flex-direction:column;margin:-14px}.login aside{padding:28px 24px;flex:none}.lf{max-width:none;padding:28px 24px}}
 @media print{nav,.np{display:none!important}}
 </style></head><body><div id="app"><nav id="nav"></nav><main id="main">Carregando…</main></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.js"></script>
@@ -44,10 +48,25 @@ const mon=t=>new Date(t).toISOString().slice(0,7);
 function grp(arr,f,v=()=>1){const o={};arr.forEach(x=>{const k=f(x);if(k!=null)o[k]=(o[k]||0)+v(x)});return o}
 function bars(o,fmt=x=>x,sort=true){let e=Object.entries(o);if(sort)e.sort((a,b)=>b[1]-a[1]);e=e.slice(0,10);const mx=Math.max(1,...e.map(x=>x[1]));return e.length?e.map(([k,v])=>`<div class="bar"><em title="${esc(k)}">${esc(k)}</em><i style="width:${v/mx*55}%"></i>${fmt(v)}</div>`).join(""):'<span class="mu">Sem dados ainda.</span>'}
 let P=[],perfil={};
-const SUPABASE_URL="https://efqjtuklftyvlnkmhjxu.supabase.co",SUPABASE_KEY="sb_publishable_Ob-2TxX1RnugHYew6kM0ow_PUJiT4XX";
-function loginUI(){$("#nav").innerHTML="";$("#main").innerHTML=`<div class="c" style="max-width:360px;margin:60px auto"><h2>🏢 Manutenção Predial</h2><label>E-mail<input id="l_e" type="email"></label><label>Senha<input id="l_s" type="password"></label><p class="er2" id="l_er"></p><div class="row"><button class="b" onclick="entrar()">Entrar</button><button class="b s" onclick="criar()">Criar conta</button></div></div>`}
-async function entrar(){const{error}=await SB.auth.signInWithPassword({email:$("#l_e").value.trim(),password:$("#l_s").value});if(error)$("#l_er").textContent="Erro: "+error.message;else location.reload()}
-async function criar(){const{error}=await SB.auth.signUp({email:$("#l_e").value.trim(),password:$("#l_s").value});$("#l_er").textContent=error?"Erro: "+error.message:"Conta criada. Se o projeto exigir confirmação, confirme o e-mail e depois entre."}
+const SUPABASE_URL="https://moerpgbqjnersqwqgndw.supabase.co",SUPABASE_KEY="sb_publishable_Ob-2TxX1RnugHYew6kM0ow_PUJiT4XX";
+let modo="entrar";
+function msgErro(e){const m=(e.message||"").toLowerCase();
+ if(m.includes("invalid login"))return"E-mail ou senha incorretos.";
+ if(m.includes("already registered"))return"Este e-mail já tem cadastro. Use a opção Entrar.";
+ if(m.includes("at least"))return"A senha precisa ter pelo menos 6 caracteres.";
+ if(m.includes("rate limit"))return"Muitos cadastros em pouco tempo. Aguarde alguns minutos e tente de novo.";
+ if(m.includes("not confirmed"))return"Confirme seu e-mail pelo link que enviamos antes de entrar.";
+ if(m.includes("fetch"))return"Não foi possível conectar ao servidor. Verifique a internet.";
+ return e.message||"Erro inesperado."}
+function loginUI(){const c=modo=="criar";$("#nav").innerHTML="";
+ $("#main").innerHTML=`<div class="login"><aside><h1>Manutenção Predial</h1><p>Chamados, prazos e custos de manutenção da unidade em um só lugar.</p></aside><form class="lf" onsubmit="enviar();return false"><h2>${c?"Criar conta":"Entrar"}</h2>${c?'<label>Nome<input id="l_n" autocomplete="name"></label>':""}<label>E-mail<input id="l_e" type="email" autocomplete="email"></label><label>Senha<input id="l_s" type="password" autocomplete="${c?"new-password":"current-password"}"></label><p class="er2" id="l_er"></p><button class="b" style="width:100%">${c?"Cadastrar":"Entrar"}</button><p class="mu" style="margin-top:14px">${c?"Já tem conta?":"Primeiro acesso?"} <a class="lk" onclick="modo='${c?"entrar":"criar"}';loginUI()">${c?"Entrar":"Criar conta"}</a></p></form></div>`}
+async function enviar(){const e=$("#l_e").value.trim(),s=$("#l_s").value,er=$("#l_er");er.style.color="";er.textContent="";
+ if(!e||!s){er.textContent="Informe e-mail e senha.";return}
+ try{if(modo=="criar"){const n=$("#l_n").value.trim();if(!n){er.textContent="Informe seu nome.";return}
+   const{data,error}=await SB.auth.signUp({email:e,password:s,options:{data:{nome:n}}});if(error)throw error;
+   if(data.session)location.reload();else{er.style.color="var(--ok)";er.textContent="Cadastro feito. Enviamos um link de confirmação para o seu e-mail."}}
+  else{const{error}=await SB.auth.signInWithPassword({email:e,password:s});if(error)throw error;location.reload()}}
+ catch(x){er.textContent=msgErro(x)}}
 async function init(){
  if(typeof supabase=="undefined")throw new Error("A biblioteca do Supabase não carregou (internet ou bloqueio do CDN).");
  window.SB=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
@@ -71,7 +90,7 @@ async function init(){
  db.doc("config/sla").onSnapshot(s=>{if(s.exists)CFG={...CFG,...s.data()};render()});
  render()}
 function mine(){return canAdm?T:T.filter(t=>t.solicitanteId==uid||t.respId==uid)}
-function render(){if(!db)return;$("#nav").innerHTML="<h1>🏢 Manutenção Predial <a style='font-size:11px;color:#9db4e8;cursor:pointer' onclick='SB.auth.signOut().then(()=>location.reload())'>sair</a></h1>"+MENU.filter(m=>canAdm||!["mat","rel","cfg"].includes(m[0])).map(m=>`<button class="${view==m[0]||(view=="det"&&m[0]=="lista")?"on":""}" onclick="go('${m[0]}')">${m[1]}</button>`).join("");
+function render(){if(!db)return;$("#nav").innerHTML=`<h1>Manutenção Predial</h1><div class="who"><b>${esc(perfil.nome)}</b>${{admin:"Administrador",gestor:"Gestor",tecnico:"Técnico",solicitante:"Solicitante"}[perfil.papel]||""} · <a onclick="SB.auth.signOut().then(()=>location.reload())">Sair</a></div>`+MENU.filter(m=>canAdm||!["mat","rel","cfg"].includes(m[0])).map(m=>`<button class="${view==m[0]||(view=="det"&&m[0]=="lista")?"on":""}" onclick="go('${m[0]}')">${m[1]}</button>`).join("");
  ({dash,novo,lista,mat,rel,cfg,det})[view]()}
 function go(v,id){view=v;cur=id||null;render();scrollTo(0,0)}
 function dash(){const L=mine(),y=new Date().getFullYear(),m=mon(now()),ab=L.filter(t=>!done(t)),sl=L.filter(t=>t.status=="Concluído"),ok=sl.filter(t=>!t.conclusao||t.conclusao<=lim(t)).length;
