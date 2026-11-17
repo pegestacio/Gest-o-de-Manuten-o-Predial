@@ -48,7 +48,7 @@ const mon=t=>new Date(t).toISOString().slice(0,7);
 function grp(arr,f,v=()=>1){const o={};arr.forEach(x=>{const k=f(x);if(k!=null)o[k]=(o[k]||0)+v(x)});return o}
 function bars(o,fmt=x=>x,sort=true){let e=Object.entries(o);if(sort)e.sort((a,b)=>b[1]-a[1]);e=e.slice(0,10);const mx=Math.max(1,...e.map(x=>x[1]));return e.length?e.map(([k,v])=>`<div class="bar"><em title="${esc(k)}">${esc(k)}</em><i style="width:${v/mx*55}%"></i>${fmt(v)}</div>`).join(""):'<span class="mu">Sem dados ainda.</span>'}
 let P=[],perfil={};
-const SUPABASE_URL="https://moerpgbqjnersqwqgndw.supabase.co",SUPABASE_KEY="sb_publishable_Ob-2TxX1RnugHYew6kM0ow_PUJiT4XX";
+const SUPABASE_URL="https://moerpgbqjnersqwqgndw.supabase.co",SUPABASE_KEY="sb_publishable_dWlIMuLcrbjpsciBX_PNvA_q1qfuFtr";
 let modo="entrar";
 function msgErro(e){const m=(e.message||"").toLowerCase();
  if(m.includes("invalid login"))return"E-mail ou senha incorretos.";
